@@ -1,4 +1,4 @@
-FROM golang:1.22-alpine AS builder
+FROM golang:1.23-alpine AS builder
 
 WORKDIR /app
 
@@ -15,9 +15,10 @@ WORKDIR /app
 RUN adduser -D -g '' appuser
 
 COPY --from=builder /server /app/server
+COPY assets /app/assets
 
 ENV PORT=8080
-ENV FRONTEND_ASSETS_PATH=/assets
+ENV FRONTEND_ASSETS_PATH=/app/assets
 
 EXPOSE 8080
 
