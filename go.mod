@@ -1,6 +1,6 @@
 module cat-app
 
-go 1.26.2
+go 1.23.0
 
 require (
 	github.com/gofiber/fiber/v2 v2.52.13
